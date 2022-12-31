@@ -3,21 +3,13 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-int n = InputNumber("Введите значение N: ");
-int count = 2;
+Console.Write("Введите значение N: ");
+int count = Convert.ToInt32(Console.ReadLine());
 
-PrintNumber(n, count);
-void PrintNumber(int n, int count)
+NaturalNumber(count);
+void NaturalNumber(int num)
 {
-    if (count > n) return;
-    PrintNumber(n, count + 1);
-    Console.Write(count + ", ");
+    if (num == 0) return;
+    Console.Write(num + ", ");
+    NaturalNumber(num - 1);
 }
-
-int InputNumber(string input)
-{
-    Console.Write(input);
-    int output = Convert.ToInt32(Console.ReadLine());
-    return output;
-}
-Console.WriteLine(1);
